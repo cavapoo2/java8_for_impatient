@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class C2E9 {
@@ -12,6 +13,7 @@ public class C2E9 {
 
         joinStreams3(getNewStream().parallel()).forEach(System.out::println);
         joinStreams(getNewStream()).forEach(System.out::println);
+        getNewStream().flatMap(e -> e.stream()).collect(Collectors.toList()).forEach(System.out::println);
     }
 
     static Stream<ArrayList<Integer>> getNewStream() {
